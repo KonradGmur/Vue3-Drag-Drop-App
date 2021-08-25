@@ -3,7 +3,7 @@
 		<span>Drag or Drop File</span>
 		<span>OR</span>
 		<label for="dragdropFile">Select File</label>
-		<input type="file" id="dragdropFile">
+		<input type="file" id="dragdropFile" />
 	</div>
 </template>
 
@@ -13,4 +13,28 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.dragdrop {
+	width: 400px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 16px;
+	border: 2px dashed #41b883;
+	background-color: #fff;
+	transform: 0.3s ease all;
+
+	label {
+		padding: 8px 12px;
+		color: #fff;
+		background-color: #41b883;
+		transform: 0.3s ease all;
+	}
+
+	input {
+		display: none;
+	}
+}
+</style>
