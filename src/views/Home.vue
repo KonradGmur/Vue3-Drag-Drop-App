@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<h1>DragDrop</h1>
-		<DragDrop />
+		<DragDrop @drop.prevent="drop" />
 		<span class="file-info">File: {{ dragdropFile.name }}</span>
 	</div>
 </template>
@@ -19,7 +19,11 @@ export default {
 	setup() {
 		let dragdropFile = ref('');
 
-		return { dragdropFile };
+		const drop = (e) => {
+			dragdropFile.value = e.dataTransfer.files[0];
+		};
+
+		return { dragdropFile, drop };
 	},
 };
 </script>
