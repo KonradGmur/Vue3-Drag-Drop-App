@@ -15,8 +15,18 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
 	name: 'DragDrop',
+	setup() {
+		const active = ref(false);
+
+		const toggleActive = () => {
+			active.value = !active.value;
+		};
+
+		return { active, toggleActive };
+	},
 };
 </script>
 
@@ -42,6 +52,17 @@ export default {
 
 	input {
 		display: none;
+	}
+}
+
+.active-drop {
+	color: #fff;
+	border-color: #fff;
+	background-color: #41b883;
+
+	label {
+		background-color: #fff;
+		color: #41b883;
 	}
 }
 </style>
