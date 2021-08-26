@@ -1,5 +1,12 @@
 <template>
-	<div class="dragdrop">
+	<div
+		@dragenter.prevent="toggleActive"
+		@dragleave.prevent="toggleActive"
+		@dragover.prevent
+		@drop.prevent="toggleActive"
+		:class="{ 'active-drop': active }"
+		class="dragdrop"
+	>
 		<span>Drag or Drop File</span>
 		<span>OR</span>
 		<label for="dragdropFile">Select File</label>

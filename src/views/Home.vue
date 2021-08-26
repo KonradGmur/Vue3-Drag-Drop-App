@@ -28,6 +28,7 @@ export default {
 .home {
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: #f1f1f1;
