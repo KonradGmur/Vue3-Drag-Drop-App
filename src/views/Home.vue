@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<h1>DragDrop</h1>
-		<DragDrop @drop.prevent="drop" />
+		<DragDrop @drop.prevent="drop" @change="selectedFile" />
 		<span class="file-info">File: {{ dragdropFile.name }}</span>
 	</div>
 </template>
@@ -23,7 +23,11 @@ export default {
 			dragdropFile.value = e.dataTransfer.files[0];
 		};
 
-		return { dragdropFile, drop };
+		const selectedFile = () => {
+			dragdropFile.value = document.querySelector('.dragdropFile').files[0];
+		};
+
+		return { dragdropFile, drop, selectedFile };
 	},
 };
 </script>

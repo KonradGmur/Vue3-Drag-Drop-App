@@ -10,7 +10,7 @@
 		<span>Drag or Drop File</span>
 		<span>OR</span>
 		<label for="dragdropFile">Select File</label>
-		<input type="file" id="dragdropFile" />
+		<input type="file" id="dragdropFile" class="dragdropFile" />
 	</div>
 </template>
 
